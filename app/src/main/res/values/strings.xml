@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ProjetIF26-DrouotRenard</string>
+    <string name="maint_tv">Fromagerie Application</string>
+    <string name="main_btn_1">Utiliser</string>
+    <string name="main_btn_2">Stocker</string>
+    <string name="main_btn_3">Paramétrer</string>
+    <string name="main_btn_4">Traçabilité</string>
 </resources>

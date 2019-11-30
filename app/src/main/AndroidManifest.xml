@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Tracabilite.TracabiliteActivity"></activity>
+        <activity android:name=".Stocker.StockerActivity" />
+        <activity android:name=".Parametrer.ParametrerActivity" />
+        <activity android:name=".Utiliser.UtiliserActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
