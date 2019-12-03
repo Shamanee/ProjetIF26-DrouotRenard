@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ProjetIF26-DrouotRenard</string>
+    <string name="nouvelle_feuille_main">Nouvelle Feuille</string>
+    <string name="nouveau_modele_main">Nouveau Modèle</string>
+    <string name="tracabilite_main">Traçabilité</string>
+    <string name="Welcome_main">Bienvenue dans Easy Fab !</string>
 </resources>
