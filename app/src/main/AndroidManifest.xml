@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tracabilite.TracabiliteActivity"></activity>
+        <activity android:name=".Parametrer.Parametrer3Activity"></activity>
+        <activity android:name=".Parametrer.Parametrer2Activity" />
+        <activity android:name=".Stocker.Stocker2Activity" />
+        <activity android:name=".Tracabilite.Tracabilite3Activity" />
+        <activity android:name=".Tracabilite.Tracabilite2Activity" />
+        <activity android:name=".Utiliser.Utiliser3Activity" />
+        <activity android:name=".Utiliser.Utiliser2Activity" />
+        <activity android:name=".Tracabilite.TracabiliteActivity" />
         <activity android:name=".Stocker.StockerActivity" />
         <activity android:name=".Parametrer.ParametrerActivity" />
         <activity android:name=".Utiliser.UtiliserActivity" />

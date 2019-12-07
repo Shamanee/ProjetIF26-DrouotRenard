@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Parametrer.ParametrerActivity">
+    tools:context=".Parametrer.Parametrer2Activity">
 
     <Button
-        android:id="@+id/parametrerView_button"
+        android:id="@+id/parametrer2View_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/parametrerView_btn"
+        android:text="@string/parametrer2View_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
