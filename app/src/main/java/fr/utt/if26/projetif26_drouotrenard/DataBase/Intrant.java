@@ -13,6 +13,10 @@ public class Intrant {
 
     private String numeroLot;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId(){
         return this.id;
     }

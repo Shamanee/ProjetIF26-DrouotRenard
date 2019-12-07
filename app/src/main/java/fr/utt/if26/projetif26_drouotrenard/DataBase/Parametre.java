@@ -31,6 +31,10 @@ public class Parametre {
     @ColumnInfo(name = "ligne_id")
     public int ligneId;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId(){
         return this.id;
     }

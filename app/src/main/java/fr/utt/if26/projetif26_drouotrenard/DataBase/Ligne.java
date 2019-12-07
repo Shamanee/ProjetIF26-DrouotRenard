@@ -1,8 +1,10 @@
 package fr.utt.if26.projetif26_drouotrenard.DataBase;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "ligne",
@@ -13,6 +15,7 @@ import androidx.room.PrimaryKey;
         ))
 public class Ligne {
 
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     private int id;
 
@@ -22,6 +25,10 @@ public class Ligne {
 
     @ColumnInfo(name = "module_id")
     public int moduleId;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return this.id;

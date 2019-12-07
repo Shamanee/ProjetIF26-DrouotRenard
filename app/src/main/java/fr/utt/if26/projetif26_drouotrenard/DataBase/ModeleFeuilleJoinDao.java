@@ -20,14 +20,14 @@ public interface ModeleFeuilleJoinDao {
 
     @Query("SELECT * FROM modele " +
             "INNER JOIN modele_feuille " +
-            "ON modele.id=modele_feuille.modeleId " +
-            "WHERE modele_feuille.feuilleId=:feuilleId")
+            "ON modele.id=modele_feuille.modele_id " +
+            "WHERE modele_feuille.feuille_id=:feuilleId")
     LiveData<List<Modele>> getModeleForFeuille(final int feuilleId);
 
     @Query("SELECT * FROM feuille " +
             "INNER JOIN modele_feuille " +
-            "ON feuille.id=modele_feuille.feuilleId " +
-            "WHERE modele_feuille.modeleId=:modeleId")
+            "ON feuille.id=modele_feuille.feuille_id " +
+            "WHERE modele_feuille.modele_id=:modeleId")
     LiveData<List<Feuille>> getFeuilleForModele(final int modeleId);
 
 }

@@ -17,6 +17,10 @@ public class Feuille {
 
     private Date updatedAt;
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -44,4 +48,6 @@ public class Feuille {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+
 }
