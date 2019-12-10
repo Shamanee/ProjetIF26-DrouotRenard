@@ -21,7 +21,7 @@ public class IntrantViewModel extends AndroidViewModel {
         allIntrants = repository.getAllIntrants();
     }
 
-    LiveData<List<Intrant>> getAllIntrants() {
+    public LiveData<List<Intrant>> getAllIntrants() {
         return  allIntrants;
     }
 

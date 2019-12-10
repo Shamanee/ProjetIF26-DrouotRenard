@@ -21,7 +21,7 @@ public class FeuilleViewModel extends AndroidViewModel {
         allFeuilles = repository.getAllFeuilles();
     }
 
-    LiveData<List<Feuille>> getAllFeuilles() {
+    public LiveData<List<Feuille>> getAllFeuilles() {
         return  allFeuilles;
     }
 

@@ -20,7 +20,7 @@ public class LigneViewModel extends AndroidViewModel {
         allLignes = repository.getAllLignes();
     }
 
-    LiveData<List<Ligne>> getAllLignes() {
+    public LiveData<List<Ligne>> getAllLignes() {
         return  allLignes;
     }
 

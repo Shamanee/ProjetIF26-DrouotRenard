@@ -20,7 +20,7 @@ public class ModuleViewModel extends AndroidViewModel {
         allModules = repository.getAllModules();
     }
 
-    LiveData<List<Module>> getAllModules() {
+    public LiveData<List<Module>> getAllModules() {
         return  allModules;
     }
 

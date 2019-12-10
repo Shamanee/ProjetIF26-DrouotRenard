@@ -20,7 +20,7 @@ public class ModeleViewModel extends AndroidViewModel {
         allModeles = repository.getAllModeles();
     }
 
-    LiveData<List<Modele>> getAllModeles() {
+    public LiveData<List<Modele>> getAllModeles() {
         return  allModeles;
     }
 

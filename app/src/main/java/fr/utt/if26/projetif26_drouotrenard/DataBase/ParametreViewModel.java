@@ -20,7 +20,7 @@ public class ParametreViewModel extends AndroidViewModel {
         allParametres = repository.getAllParametres();
     }
 
-    LiveData<List<Parametre>> getAllParametres() {
+    public LiveData<List<Parametre>> getAllParametres() {
         return  allParametres;
     }
 
