@@ -16,4 +16,5 @@
     <string name="parametrer3View_editText_obj">Objectif</string>
     <string name="parametrer3View_editText_reel">Réel</string>
     <string name="parametrer3View_btn_creer">Créer</string>
+    <string name="Valider">Valider</string>
 </resources>

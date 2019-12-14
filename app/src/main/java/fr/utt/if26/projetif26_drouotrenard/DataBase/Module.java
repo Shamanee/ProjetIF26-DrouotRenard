@@ -23,6 +23,12 @@ public class Module {
     @ColumnInfo(name = "modele_id")
     public int modeleId;
 
+    public Module(int id, String nom, int modeleId) {
+        this.id = id;
+        this.nom = nom;
+        this.modeleId = modeleId;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

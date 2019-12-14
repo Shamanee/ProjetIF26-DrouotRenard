@@ -16,11 +16,17 @@ import fr.utt.if26.projetif26_drouotrenard.R;
 public class LigneListAdapter extends RecyclerView.Adapter<LigneListAdapter.LigneViewHolder> {
 
     class LigneViewHolder extends RecyclerView.ViewHolder {
-        private final TextView ligneItemView;
+        private final TextView id;
+        private final TextView numeroSerie;
+        private final TextView obj;
+        private final TextView reel;
 
         private LigneViewHolder(View itemView) {
             super(itemView);
-            ligneItemView = itemView.findViewById(R.id.textView);
+            id = itemView.findViewById(R.id.ligne_id);
+            numeroSerie = itemView.findViewById(R.id.ligne_numero_serie);
+            obj = itemView.findViewById(R.id.ligne_objectif);
+            reel = itemView.findViewById(R.id.ligne_reel);
         }
     }
 
@@ -42,9 +48,14 @@ public class LigneListAdapter extends RecyclerView.Adapter<LigneListAdapter.Lign
     public void onBindViewHolder(@NonNull LigneListAdapter.LigneViewHolder holder, int position) {
         if (lignes != null) {
             Ligne current = lignes.get(position);
-            holder.ligneItemView.setText(current.getId());
+            holder.id.setText("1");
+            holder.numeroSerie.setText(current.getNumeroSerie());
+            holder.obj.setText(current.getObjectif());
+            holder.reel.setText(current.getReel());
         } else {
-            holder.ligneItemView.setText("No lignes");
+            holder.numeroSerie.setText("");
+            holder.obj.setText("");
+            holder.reel.setText("");
         }
     }
 

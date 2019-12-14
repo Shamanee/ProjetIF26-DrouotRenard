@@ -2,10 +2,12 @@ package fr.utt.if26.projetif26_drouotrenard.DataBase;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -35,7 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
     static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static AppDatabase getDatabase(final Context context) {
+    public static AppDatabase getDatabase(final Context context) {
 
         if (INSTANCE == null) {
             synchronized (AppDatabase.class) {
@@ -46,5 +48,24 @@ public abstract class AppDatabase extends RoomDatabase {
         }
 
         return INSTANCE;
+    }
+
+    private static AppDatabase buildDatabase(final Context context) {
+        return Room.databaseBuilder(context,
+                AppDatabase.class,
+                "app_database")
+//                .addCallback(new Callback() {
+//            @Override
+//            public void onCreate(@NonNull SupportSQLiteDatabase db) {
+//                super.onCreate(db);
+//                Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        getDatabase(context).parametreDao().insertAll(Parametre.populateData());
+//                    }
+//                });
+//            }
+//        })
+                .build();
     }
 }

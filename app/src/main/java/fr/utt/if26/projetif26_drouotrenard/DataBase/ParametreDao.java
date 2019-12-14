@@ -15,6 +15,9 @@ public interface ParametreDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Parametre parametre);
 
+    @Insert
+    void insertAll(Parametre... parametres);
+
     @Update
     void update(Parametre parametre);
 
@@ -26,6 +29,9 @@ public interface ParametreDao {
 
     @Query("SELECT * FROM parametre")
     LiveData<List<Parametre>> getAll();
+
+    @Query("SELECT * FROM parametre")
+    List<Parametre> getAllB();
 
     @Query("SELECT * FROM parametre WHERE id = :id")
     Parametre getById(int id);

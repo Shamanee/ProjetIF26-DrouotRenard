@@ -11,11 +11,13 @@ import androidx.room.PrimaryKey;
                     entity = Intrant.class,
                     parentColumns = "id",
                     childColumns = "intrant_id"),
-            @ForeignKey(
-                    entity = Ligne.class,
-                    parentColumns = "id",
-                    childColumns = "ligne_id"
-            )})
+//            @ForeignKey(
+//                    entity = Ligne.class,
+//                    parentColumns = "id",
+//                    childColumns = "ligne_id"
+//            )
+}
+            )
 public class Parametre {
 
     @PrimaryKey(autoGenerate = true)
@@ -28,8 +30,12 @@ public class Parametre {
     @ColumnInfo(name = "intrant_id")
     public int intrantId;
 
-    @ColumnInfo(name = "ligne_id")
-    public int ligneId;
+//    @ColumnInfo(name = "ligne_id")
+//    public int ligneId;
+
+    public Parametre(String type) {
+        this.type = type;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -63,11 +69,25 @@ public class Parametre {
         return this.intrantId;
     }
 
-    public void setLigneId(int ligneId) {
-        this.ligneId = ligneId;
+//    public void setLigneId(int ligneId) {
+//        this.ligneId = ligneId;
+//    }
+//
+//    public int getLigneId() {
+//        return this.ligneId;
+//    }
+
+    public static Parametre[] populateData() {
+        return new Parametre[] {
+          new Parametre("Temperature"),
+          new Parametre("Acidite"),
+          new Parametre("pH"),
+          new Parametre("Temps")
+        };
     }
 
-    public int getLigneId() {
-        return this.ligneId;
+    @Override
+    public String toString() {
+        return type;
     }
 }
