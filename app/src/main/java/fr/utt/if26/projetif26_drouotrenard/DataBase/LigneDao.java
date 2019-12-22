@@ -27,6 +27,9 @@ public interface LigneDao {
     @Query("SELECT * FROM ligne ")
     LiveData<List<Ligne>> getAll();
 
+    @Query("SELECT * FROM ligne WHERE parametreId = :parametreId")
+    LiveData<List<Ligne>> findLignesForParametre (int parametreId);
+
     @Query("SELECT * FROM ligne WHERE id = :id")
     Ligne getById(int id);
 

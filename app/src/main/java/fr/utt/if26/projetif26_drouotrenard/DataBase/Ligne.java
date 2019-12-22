@@ -7,12 +7,16 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "ligne"
-//        foreignKeys = @ForeignKey(
+@Entity(tableName = "ligne",
+        foreignKeys = @ForeignKey(
 //                entity = Module.class,
 //                parentColumns = "id",
 //                childColumns = "module_id"
-//        )
+                entity = Parametre.class,
+                parentColumns = "id",
+                childColumns = "parametreId",
+                onDelete = ForeignKey.CASCADE
+        )
 )
 public class Ligne {
 
@@ -29,10 +33,13 @@ public class Ligne {
 //    @ColumnInfo(name = "module_id")
 //    public int moduleId;
 
-    public Ligne(String numeroSerie, String objectif, String reel) {
+    public int parametreId;
+
+    public Ligne(String numeroSerie, String objectif, String reel, int parametreId) {
         this.numeroSerie = numeroSerie;
         this.objectif = objectif;
         this.reel = reel;
+        this.parametreId = parametreId;
     }
 
     public void setId(int id) {
@@ -73,5 +80,13 @@ public class Ligne {
 //
 //    public int getModuleId() {
 //        return this.moduleId;
+//    }
+
+//    public void setParametreId(int parametreId) {
+//        this.parametreId = parametreId;
+//    }
+//
+//    public int getParametreId() {
+//        return this.parametreId;
 //    }
 }

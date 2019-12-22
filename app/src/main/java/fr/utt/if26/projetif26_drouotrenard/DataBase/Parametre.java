@@ -5,18 +5,18 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "parametre",
-        foreignKeys = {
-            @ForeignKey(
-                    entity = Intrant.class,
-                    parentColumns = "id",
-                    childColumns = "intrant_id"),
+@Entity(tableName = "parametre"
+//        foreignKeys = {
+//            @ForeignKey(
+//                    entity = Intrant.class,
+//                    parentColumns = "id",
+//                    childColumns = "intrant_id"),
 //            @ForeignKey(
 //                    entity = Ligne.class,
 //                    parentColumns = "id",
 //                    childColumns = "ligne_id"
 //            )
-}
+//}
             )
 public class Parametre {
 
@@ -84,10 +84,5 @@ public class Parametre {
           new Parametre("pH"),
           new Parametre("Temps")
         };
-    }
-
-    @Override
-    public String toString() {
-        return type;
     }
 }

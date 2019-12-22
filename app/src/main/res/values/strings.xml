@@ -12,9 +12,13 @@
     <string name="tracabiliteView_btn">Chercher</string>
     <string name="parametrerView_btn">Ajouter Module</string>
     <string name="parametrer2View_btn">Ajouter Ligne</string>
+    <string name="parametrer2EditText">Nom du module</string>
     <string name="parametrer3View_editText_num">Numero de serie</string>
     <string name="parametrer3View_editText_obj">Objectif</string>
     <string name="parametrer3View_editText_reel">Réel</string>
     <string name="parametrer3View_btn_creer">Créer</string>
+    <string name="parametrer3View_btn_ajoutparam">Ajout Parametre</string>
     <string name="Valider">Valider</string>
+    <string name="parametrer4_editText_type">Type</string>
+    <string name="parametrer4_btn_valider">Valider</string>
 </resources>
