@@ -75,7 +75,7 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
             case R.id.parametre3View_btn_valider:
                 LigneViewModel ligneViewModel = new LigneViewModel(getApplication());
                 Log.d("SELECT", "onChanged: "+ spinner.getSelectedItem().toString());
-                Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId());
+                Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId()+1);
                 ligneViewModel.insert(ligne);
                 Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
                 break;

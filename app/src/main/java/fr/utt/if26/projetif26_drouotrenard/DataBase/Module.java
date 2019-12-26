@@ -9,9 +9,9 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "module",
         indices = {@Index("id")},
         foreignKeys = @ForeignKey(
-                entity = Modele.class,
+                entity = Ligne.class,
                 parentColumns = "id",
-                childColumns = "modele_id"
+                childColumns = "ligne_id"
         ))
 public class Module {
 
@@ -20,13 +20,12 @@ public class Module {
 
     private String nom;
 
-    @ColumnInfo(name = "modele_id")
-    public int modeleId;
+    @ColumnInfo(name = "ligne_id")
+    public int ligneId;
 
-    public Module(int id, String nom, int modeleId) {
-        this.id = id;
+    public Module(String nom, int ligneId) {
         this.nom = nom;
-        this.modeleId = modeleId;
+        this.ligneId = ligneId;
     }
 
     public void setId(int id) {
@@ -45,11 +44,11 @@ public class Module {
         return this.nom;
     }
 
-    public void setModeleId(int modeleId) {
-        this.modeleId = modeleId;
+    public void setLigneId(int ligneId) {
+        this.ligneId = ligneId;
     }
 
-    public int getModeleId() {
-        return this.modeleId;
+    public int getLigneId() {
+        return this.ligneId;
     }
 }
