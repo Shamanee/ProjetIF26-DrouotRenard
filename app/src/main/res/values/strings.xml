@@ -10,8 +10,10 @@
     <string name="tracabiliteView_textLabel">Tracabilité</string>
     <string name="tracabiliteView_editText">Numero de serie</string>
     <string name="tracabiliteView_btn">Chercher</string>
-    <string name="parametrerView_btn">Ajouter Module</string>
-    <string name="parametrer2View_btn">Ajouter Ligne</string>
+    <string name="parametrerView_btn_addModule">Ajouter Module</string>
+    <string name="parametrerView_btn_addLigne">Ajouter Ligne</string>
+    <string name="parametrerView_btn_addParam">Ajouter Parametre</string>
+    <string name="VueListe">Vue Liste</string>
     <string name="parametrer2EditText">Nom du module</string>
     <string name="parametrer3View_editText_num">Numero de serie</string>
     <string name="parametrer3View_editText_obj">Objectif</string>
@@ -21,4 +23,6 @@
     <string name="Valider">Valider</string>
     <string name="parametrer4_editText_type">Type</string>
     <string name="parametrer4_btn_valider">Valider</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="editer">editer</string>
 </resources>

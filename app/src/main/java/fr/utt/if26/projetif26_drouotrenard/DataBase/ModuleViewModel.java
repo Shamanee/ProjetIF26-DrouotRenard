@@ -27,4 +27,8 @@ public class ModuleViewModel extends AndroidViewModel {
     public void insert(Module module) {
         repository.insert(module);
     }
+
+    public void deleteByNom(String nom) {
+        repository.deleteByNom(nom);
+    }
 }

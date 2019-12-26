@@ -13,7 +13,7 @@
         android:layout_marginTop="125dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/parametrer3View_editText_num"
+        android:hint="@string/parametrer3View_editText_num"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/parametrer3View_editText_obj"
+        android:hint="@string/parametrer3View_editText_obj"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parametrer3View_editText_num" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="75dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/parametrer3View_editText_reel"
+        android:hint="@string/parametrer3View_editText_reel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parametrer3View_editText_obj" />
@@ -64,11 +64,11 @@
         app:layout_constraintTop_toBottomOf="@+id/parametrer3View_spinner_param" />
 
     <Button
-        android:id="@+id/paraemtrer3View_btn_ajoutparam"
+        android:id="@+id/paraemtrer3View_btn_vueListe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/parametrer3View_btn_ajoutparam"
+        android:text="@string/VueListe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.85"

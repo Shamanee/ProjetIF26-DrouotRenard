@@ -16,11 +16,14 @@ import fr.utt.if26.projetif26_drouotrenard.R;
 public class ModuleListAdapter extends RecyclerView.Adapter<ModuleListAdapter.ModuleViewHolder> {
 
     class ModuleViewHolder extends RecyclerView.ViewHolder {
-        private final TextView moduleItemView;
+        private final TextView id;
+        private final TextView nom;
 
         private ModuleViewHolder(View itemView) {
             super(itemView);
-            moduleItemView = itemView.findViewById(R.id.textView);
+            id = itemView.findViewById(R.id.module_id);
+            nom = itemView.findViewById(R.id.module_nom);
+
         }
     }
 
@@ -42,10 +45,16 @@ public class ModuleListAdapter extends RecyclerView.Adapter<ModuleListAdapter.Mo
     public void onBindViewHolder(@NonNull ModuleListAdapter.ModuleViewHolder holder, int position) {
         if (modules != null) {
             Module current = modules.get(position);
-            holder.moduleItemView.setText(current.getId());
+            holder.id.setText(Integer.toString(current.getId()));
+            holder.nom.setText(current.getNom());
         } else {
-            holder.moduleItemView.setText("No modules");
+            holder.id.setText("");
+            holder.nom.setText("");
         }
+    }
+
+    public List<Module> getModules() {
+        return modules;
     }
 
     public void setModules(List<Module> listModules){

@@ -7,13 +7,37 @@
     tools:context=".Parametrer.ParametrerActivity">
 
     <Button
-        android:id="@+id/parametrerView_button"
+        android:id="@+id/parametrerView_addModule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/parametrerView_btn"
+        android:text="@string/parametrerView_btn_addModule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <Button
+        android:id="@+id/parametrerView_addLigne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/parametrerView_btn_addLigne"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parametrerView_addModule"
+        app:layout_constraintVertical_bias="0.313" />
+
+    <Button
+        android:id="@+id/parametrerView_addParam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/parametrerView_btn_addParam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20" />
+        app:layout_constraintTop_toBottomOf="@+id/parametrerView_addLigne" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

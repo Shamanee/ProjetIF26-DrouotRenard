@@ -30,10 +30,14 @@ public class Parametrer4Activity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         if(v.getId() == R.id.parametrer4_btn_valider) {
-            ParametreViewModel parametreViewModel = new ParametreViewModel(getApplication());
-            Parametre parametre = new Parametre(this.input_type.getText().toString());
-            parametreViewModel.insert(parametre);
-            Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+            if (!this.input_type.getText().toString().equals("")) {
+                ParametreViewModel parametreViewModel = new ParametreViewModel(getApplication());
+                Parametre parametre = new Parametre(this.input_type.getText().toString());
+                parametreViewModel.insert(parametre);
+                Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

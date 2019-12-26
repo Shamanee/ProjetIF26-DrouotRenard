@@ -24,6 +24,9 @@ public interface ModuleDao {
     @Query("DELETE FROM module")
     void deleteAll();
 
+    @Query("DELETE FROM Module WHERE nom = :nom")
+    void deleteByNom(String nom);
+
     @Query("SELECT * FROM module")
     LiveData<List<Module>> getAll();
 

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/parametrer4_editText_type"
+        android:hint="@string/parametrer4_editText_type"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,20 @@
         android:text="@string/parametrer4_btn_valider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/parametrer4_editText_type"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.804" />
+
+    <Button
+        android:id="@+id/parametrer4_btn_vueListe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/VueListe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.857"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/parametrer4_editText_type"
+        app:layout_constraintVertical_bias="0.804" />
 </androidx.constraintlayout.widget.ConstraintLayout>

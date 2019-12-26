@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Parametrer.Parametrer4Activity"></activity>
+        <activity android:name=".Parametrer.Parametrer4ListActivity"></activity>
+        <activity android:name=".Parametrer.Parametrer3ListActivity" />
+        <activity android:name=".Parametrer.Parametrer2ListActivity" />
+        <activity android:name=".Parametrer.Parametrer4Activity" />
         <activity android:name=".Parametrer.Parametrer3Activity" />
         <activity android:name=".Parametrer.Parametrer2Activity" />
         <activity android:name=".Stocker.Stocker2Activity" />

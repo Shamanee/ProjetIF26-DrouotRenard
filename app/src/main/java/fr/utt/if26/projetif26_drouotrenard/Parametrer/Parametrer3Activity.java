@@ -40,7 +40,7 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
         this.input_reel = findViewById(R.id.parametrer3View_editText_reel);
         this.spinner = (Spinner) findViewById(R.id.parametrer3View_spinner_param);
         Button addButton = findViewById(R.id.parametre3View_btn_valider);
-        Button addParamBtn = findViewById(R.id.paraemtrer3View_btn_ajoutparam);
+        Button addParamBtn = findViewById(R.id.paraemtrer3View_btn_vueListe);
 
         addButton.setOnClickListener(this);
         addParamBtn.setOnClickListener(this);
@@ -73,14 +73,18 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.parametre3View_btn_valider:
-                LigneViewModel ligneViewModel = new LigneViewModel(getApplication());
-                Log.d("SELECT", "onChanged: "+ spinner.getSelectedItem().toString());
-                Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId()+1);
-                ligneViewModel.insert(ligne);
-                Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                if (!this.input_numero.getText().toString().equals("")) {
+                    LigneViewModel ligneViewModel = new LigneViewModel(getApplication());
+                    Log.d("SELECT", "onChanged: " + spinner.getSelectedItem().toString());
+                    Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId() + 1);
+                    ligneViewModel.insert(ligne);
+                    Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
+                }
                 break;
-            case R.id.paraemtrer3View_btn_ajoutparam:
-                Intent intent = new Intent(this, Parametrer4Activity.class);
+            case R.id.paraemtrer3View_btn_vueListe:
+                Intent intent = new Intent(this, Parametrer3ListActivity.class);
                 startActivity(intent);
                 break;
             default:

@@ -85,14 +85,18 @@ public class Parametrer2Activity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.parametrer2View_btn:
-                Intent intent = new Intent(this, Parametrer3Activity.class);
+                Intent intent = new Intent(this, Parametrer2ListActivity.class);
                 startActivity(intent);
                 break;
             case R.id.parametrer2_add_module:
-                ModuleViewModel moduleViewModel = new ModuleViewModel(getApplication());
-                Module module = new Module(this.input_name.getText().toString(), (int) spinner.getSelectedItemId()+1);
-                moduleViewModel.insert(module);
-                Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                if (!this.input_name.getText().toString().equals("")) {
+                    ModuleViewModel moduleViewModel = new ModuleViewModel(getApplication());
+                    Module module = new Module(this.input_name.getText().toString(), (int) spinner.getSelectedItemId() + 1);
+                    moduleViewModel.insert(module);
+                    Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
+                }
                 break;
             default:
                 break;
