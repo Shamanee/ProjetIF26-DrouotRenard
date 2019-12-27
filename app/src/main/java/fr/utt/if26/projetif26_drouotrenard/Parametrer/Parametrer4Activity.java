@@ -2,6 +2,7 @@ package fr.utt.if26.projetif26_drouotrenard.Parametrer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,13 +24,16 @@ public class Parametrer4Activity extends AppCompatActivity implements View.OnCli
 
         this.input_type = findViewById(R.id.parametrer4_editText_type);
         Button button = findViewById(R.id.parametrer4_btn_valider);
+        Button buttonList = findViewById(R.id.parametrer4_btn_vueListe);
 
         button.setOnClickListener(this);
+        buttonList.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.parametrer4_btn_valider) {
+        switch (v.getId()) {
+        case  R.id.parametrer4_btn_valider:
             if (!this.input_type.getText().toString().equals("")) {
                 ParametreViewModel parametreViewModel = new ParametreViewModel(getApplication());
                 Parametre parametre = new Parametre(this.input_type.getText().toString());
@@ -38,6 +42,13 @@ public class Parametrer4Activity extends AppCompatActivity implements View.OnCli
             } else {
                 Toast.makeText(this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
             }
+            break;
+            case R.id.parametrer4_btn_vueListe:
+                Intent intent = new Intent(this, Parametrer4ListActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
         }
     }
 }

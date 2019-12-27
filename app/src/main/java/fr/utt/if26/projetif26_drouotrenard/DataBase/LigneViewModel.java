@@ -27,4 +27,8 @@ public class LigneViewModel extends AndroidViewModel {
     public void insert(Ligne ligne) {
         repository.insert(ligne);
     }
+
+    public void deleteById(int id) {
+        repository.deleteById(id);
+    }
 }

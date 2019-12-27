@@ -16,11 +16,15 @@ import fr.utt.if26.projetif26_drouotrenard.R;
 public class ParametreListAdapter extends RecyclerView.Adapter<ParametreListAdapter.ParametreViewHolder> {
 
     class ParametreViewHolder extends RecyclerView.ViewHolder {
-        private final TextView parametreItemView;
+        private final TextView id;
+        private final TextView type;
+        private final TextView value;
 
         private ParametreViewHolder(View itemView) {
             super(itemView);
-            parametreItemView = itemView.findViewById(R.id.textView);
+            id = itemView.findViewById(R.id.parametre_id);
+            type = itemView.findViewById(R.id.parametre_type);
+            value = itemView.findViewById(R.id.parametre_value);
         }
     }
 
@@ -42,10 +46,18 @@ public class ParametreListAdapter extends RecyclerView.Adapter<ParametreListAdap
     public void onBindViewHolder(@NonNull ParametreListAdapter.ParametreViewHolder holder, int position) {
         if (parametres != null) {
             Parametre current = parametres.get(position);
-            holder.parametreItemView.setText(current.getId());
+            holder.id.setText(Integer.toString(current.getId()));
+            holder.type.setText(current.getType());
+            holder.value.setText(current.getValue());
         } else {
-            holder.parametreItemView.setText("No parametres");
+            holder.id.setText("");
+            holder.type.setText("");
+            holder.value.setText("");
         }
+    }
+
+    public List<Parametre> getParametres() {
+        return parametres;
     }
 
     public void setParametres(List<Parametre> listParametres){

@@ -27,4 +27,8 @@ public class ParametreViewModel extends AndroidViewModel {
     public void insert(Parametre parametre) {
         repository.insert(parametre);
     }
+
+    public void deleteById(int id) {
+        repository.deleteById(id);
+    }
 }

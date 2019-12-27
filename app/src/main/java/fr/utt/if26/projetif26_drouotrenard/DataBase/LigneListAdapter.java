@@ -48,7 +48,7 @@ public class LigneListAdapter extends RecyclerView.Adapter<LigneListAdapter.Lign
     public void onBindViewHolder(@NonNull LigneListAdapter.LigneViewHolder holder, int position) {
         if (lignes != null) {
             Ligne current = lignes.get(position);
-            holder.id.setText("1");
+            holder.id.setText(Integer.toString(current.getId()));
             holder.numeroSerie.setText(current.getNumeroSerie());
             holder.obj.setText(current.getObjectif());
             holder.reel.setText(current.getReel());
@@ -57,6 +57,10 @@ public class LigneListAdapter extends RecyclerView.Adapter<LigneListAdapter.Lign
             holder.obj.setText("");
             holder.reel.setText("");
         }
+    }
+
+    public List<Ligne> getLignes() {
+        return lignes;
     }
 
     public void setLignes(List<Ligne> listLignes){
