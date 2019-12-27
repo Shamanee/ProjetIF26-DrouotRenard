@@ -46,5 +46,27 @@ public class ParametreRepository {
             return null;
         }
     }
-    
+
+    public void updateById(int id, String type){
+        new updateAsyncTask(parametreDao, id, type).execute();
+    }
+
+    private static class updateAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        ParametreDao asyncTaskDao;
+        int id;
+        String type;
+
+        updateAsyncTask(ParametreDao dao, int id, String type) {
+            this.asyncTaskDao = dao;
+            this.id = id;
+            this.type = type;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            asyncTaskDao.updateById(id, type);
+            return null;
+        }
+    }
 }

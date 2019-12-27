@@ -31,4 +31,8 @@ public class LigneViewModel extends AndroidViewModel {
     public void deleteById(int id) {
         repository.deleteById(id);
     }
+
+    public void updateById(int id, String numeroDeSerie, String objectif, String reel, int paramId){
+        repository.updateById(id, numeroDeSerie, objectif, reel, paramId);
+    }
 }

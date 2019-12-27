@@ -31,4 +31,8 @@ public class ParametreViewModel extends AndroidViewModel {
     public void deleteById(int id) {
         repository.deleteById(id);
     }
+
+    public void updateById(int id, String type) {
+        repository.updateById(id, type);
+    }
 }

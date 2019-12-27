@@ -32,5 +32,8 @@ public interface ParametreDao {
 
     @Query("SELECT * FROM parametre WHERE id = :id")
     Parametre getById(int id);
+
+    @Query("UPDATE parametre SET type = :type WHERE id = :id")
+    void updateById(int id, String type);
     
 }

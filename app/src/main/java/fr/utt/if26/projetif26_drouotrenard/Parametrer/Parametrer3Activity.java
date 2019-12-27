@@ -30,6 +30,13 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
     private EditText input_reel;
     private Spinner spinner;
 
+    private int ligneId;
+    private String ligneNumeroDeSerie;
+    private String ligneObjectif;
+    private String ligneReel;
+    private int ligneParamId;
+    private boolean ligneEdit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +48,30 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
         this.spinner = (Spinner) findViewById(R.id.parametrer3View_spinner_param);
         Button addButton = findViewById(R.id.parametre3View_btn_valider);
         Button addParamBtn = findViewById(R.id.paraemtrer3View_btn_vueListe);
+
+        Intent intent = getIntent();
+        int ligneId = intent.getIntExtra("id", 0);
+        String ligneNumeroDeSerie = intent.getStringExtra("numeroDeSerie");
+        String ligneObjectif = intent.getStringExtra("objectif");
+        String ligneReel = intent.getStringExtra("reel");
+        int ligneParamId = intent.getIntExtra("paramId", 0);
+        boolean ligneEdit = intent.getBooleanExtra("edit", false);
+
+        this.ligneId = ligneId;
+        this.ligneEdit = ligneEdit;
+        this.ligneObjectif = ligneObjectif;
+        this.ligneReel = ligneReel;
+        this.ligneParamId = ligneParamId;
+
+        if (ligneNumeroDeSerie != null) {
+            this.input_numero.setText(ligneNumeroDeSerie);
+        }
+        if (ligneObjectif != null) {
+            this.input_obj.setText(ligneObjectif);
+        }
+        if (ligneReel != null) {
+            this.input_reel.setText(ligneReel);
+        }
 
         addButton.setOnClickListener(this);
         addParamBtn.setOnClickListener(this);
@@ -60,11 +91,13 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
                     parametresList.add(parametre.getType());
                     parametresIdList.add(parametre.getId());
                 }
+//                if (ligneParamId != 0) {
+//                    int spinnerPosition = adapter.getPosition(ligneNumeroDeSerie);
+//                    spinner.setSelection(ligneParamId);
+//                }
                 adapter.notifyDataSetChanged();
-                Log.d("SELECT", "onChanged: "+ spinner.getSelectedItem());
             }
         });
-
 
         spinner.setAdapter(adapter);
     }
@@ -75,10 +108,14 @@ public class Parametrer3Activity extends AppCompatActivity implements View.OnCli
             case R.id.parametre3View_btn_valider:
                 if (!this.input_numero.getText().toString().equals("")) {
                     LigneViewModel ligneViewModel = new LigneViewModel(getApplication());
-                    Log.d("SELECT", "onChanged: " + spinner.getSelectedItem().toString());
-                    Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId() + 1);
-                    ligneViewModel.insert(ligne);
-                    Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                    if (!ligneEdit) {
+                        Ligne ligne = new Ligne(this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId() + 1);
+                        ligneViewModel.insert(ligne);
+                        Toast.makeText(this, "Ajout réussi !", Toast.LENGTH_SHORT).show();
+                    } else {
+                        ligneViewModel.updateById(ligneId, this.input_numero.getText().toString(), this.input_obj.getText().toString(), this.input_reel.getText().toString(), (int) spinner.getSelectedItemId() + 1);
+                        Toast.makeText(this, "Edition réussie !", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
                     Toast.makeText(this, "Veuillez remplir les champs", Toast.LENGTH_SHORT).show();
                 }

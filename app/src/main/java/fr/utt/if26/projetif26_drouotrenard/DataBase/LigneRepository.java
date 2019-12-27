@@ -46,5 +46,33 @@ public class LigneRepository {
             return null;
         }
     }
-    
+
+    public void updateById(int id, String numeroDeSerie, String objectif, String reel, int paramId){
+        new updateAsyncTask(ligneDao, id, numeroDeSerie, objectif, reel, paramId).execute();
+    }
+
+    private static class updateAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        LigneDao asyncTaskDao;
+        int id;
+        String numeroDeSerie;
+        String objectif;
+        String reel;
+        int paramId;
+
+        updateAsyncTask(LigneDao dao, int id, String numeroDeSerie, String objectif, String reel, int paramId) {
+            this.asyncTaskDao = dao;
+            this.id = id;
+            this.numeroDeSerie = numeroDeSerie;
+            this.objectif = objectif;
+            this.reel = reel;
+            this.paramId = paramId;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            asyncTaskDao.updateById(id, numeroDeSerie, objectif, reel, paramId);
+            return null;
+        }
+    }
 }

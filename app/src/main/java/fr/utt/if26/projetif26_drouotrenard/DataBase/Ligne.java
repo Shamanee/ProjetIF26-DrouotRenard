@@ -86,7 +86,7 @@ public class Ligne {
 //        this.parametreId = parametreId;
 //    }
 //
-//    public int getParametreId() {
-//        return this.parametreId;
-//    }
+    public int getParametreId() {
+        return this.parametreId;
+    }
 }

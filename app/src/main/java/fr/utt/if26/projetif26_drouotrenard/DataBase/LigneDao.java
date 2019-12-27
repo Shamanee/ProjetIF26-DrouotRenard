@@ -33,4 +33,7 @@ public interface LigneDao {
     @Query("SELECT * FROM ligne WHERE id = :id")
     Ligne getById(int id);
 
+    @Query("UPDATE ligne SET numeroSerie = :numeroDeSerie, objectif = :objectif, reel = :reel, parametreId = :paramId WHERE id = :id")
+    void updateById(int id, String numeroDeSerie, String objectif, String reel, int paramId);
+
 }

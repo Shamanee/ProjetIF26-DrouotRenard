@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,8 @@ import fr.utt.if26.projetif26_drouotrenard.RecyclerItemClickListener;
 
 public class Parametrer3ListActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private int lastClicked = 0;
+    private int lastClickedId = 0;
+    private Ligne lastClickedLigne;
     private Button btnSupprimer;
     private Button btnEditer;
     private RecyclerView recyclerView;
@@ -49,7 +51,8 @@ public class Parametrer3ListActivity extends AppCompatActivity implements View.O
                 new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        lastClicked = adapter.getLignes().get(position).getId();
+                        lastClickedId = adapter.getLignes().get(position).getId();
+                        lastClickedLigne = adapter.getLignes().get(position);
                         for (int i = 0; i < recyclerView.getChildCount(); i++) {
                             View v = recyclerView.getChildAt(i);
                             v.setBackgroundColor(Color.TRANSPARENT);
@@ -74,10 +77,10 @@ public class Parametrer3ListActivity extends AppCompatActivity implements View.O
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.parametrer3List_supprimeButton:
-                if(lastClicked != 0){
-                    model.deleteById(lastClicked);
-                    Toast.makeText(this, lastClicked+" a été supprimé !", Toast.LENGTH_SHORT).show();
-                    lastClicked = 0;
+                if(lastClickedId != 0){
+                    model.deleteById(lastClickedId);
+                    Toast.makeText(this, lastClickedId+" a été supprimé !", Toast.LENGTH_SHORT).show();
+                    lastClickedId = 0;
                     for (int i = 0; i < recyclerView.getChildCount(); i++) {
                         View child = recyclerView.getChildAt(i);
                         child.setBackgroundColor(Color.TRANSPARENT);
@@ -87,7 +90,18 @@ public class Parametrer3ListActivity extends AppCompatActivity implements View.O
                 }
                 break;
             case R.id.parametrer3List_editButton:
-                Toast.makeText(this, "EDITION EN COURS DE DEV !", Toast.LENGTH_SHORT).show();
+                if (lastClickedId != 0){
+                    Intent intent = new Intent(this, Parametrer3Activity.class);
+                    intent.putExtra("id", lastClickedId);
+                    intent.putExtra("numeroDeSerie", lastClickedLigne.getNumeroSerie());
+                    intent.putExtra("objectif", lastClickedLigne.getObjectif());
+                    intent.putExtra("reel", lastClickedLigne.getReel());
+                    intent.putExtra("paramId", lastClickedLigne.getParametreId());
+                    intent.putExtra("edit", true);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Selectionner un module !", Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
     }
