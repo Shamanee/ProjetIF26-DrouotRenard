@@ -9,21 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Parametrer.Parametrer4ListActivity"></activity>
-        <activity android:name=".Parametrer.Parametrer3ListActivity" />
-        <activity android:name=".Parametrer.Parametrer2ListActivity" />
-        <activity android:name=".Parametrer.Parametrer4Activity" />
-        <activity android:name=".Parametrer.Parametrer3Activity" />
-        <activity android:name=".Parametrer.Parametrer2Activity" />
-        <activity android:name=".Stocker.Stocker2Activity" />
-        <activity android:name=".Tracabilite.Tracabilite3Activity" />
-        <activity android:name=".Tracabilite.Tracabilite2Activity" />
-        <activity android:name=".Utiliser.Utiliser3Activity" />
-        <activity android:name=".Utiliser.Utiliser2Activity" />
-        <activity android:name=".Tracabilite.TracabiliteActivity" />
-        <activity android:name=".Stocker.StockerActivity" />
-        <activity android:name=".Parametrer.ParametrerActivity" />
-        <activity android:name=".Utiliser.UtiliserActivity" />
+        <activity android:name=".Parametrer.Parametrer4ListActivity" android:parentActivityName=".Parametrer.Parametrer4Activity"/>
+        <activity android:name=".Parametrer.Parametrer3ListActivity" android:parentActivityName=".Parametrer.Parametrer3Activity"/>
+        <activity android:name=".Parametrer.Parametrer2ListActivity" android:parentActivityName=".Parametrer.Parametrer2Activity"/>
+        <activity android:name=".Parametrer.Parametrer4Activity" android:parentActivityName=".Parametrer.ParametrerActivity"/>
+        <activity android:name=".Parametrer.Parametrer3Activity" android:parentActivityName=".Parametrer.ParametrerActivity"/>
+        <activity android:name=".Parametrer.Parametrer2Activity" android:parentActivityName=".Parametrer.ParametrerActivity"/>
+        <activity android:name=".Stocker.Stocker2Activity" android:parentActivityName=".Stocker.StockerActivity"/>
+        <activity android:name=".Tracabilite.Tracabilite3Activity" android:parentActivityName=".Tracabilite.Tracabilite2Activity"/>
+        <activity android:name=".Tracabilite.Tracabilite2Activity" android:parentActivityName=".Tracabilite.TracabiliteActivity"/>
+        <activity android:name=".Utiliser.Utiliser3Activity" android:parentActivityName=".Utiliser.Utiliser2Activity"/>
+        <activity android:name=".Utiliser.Utiliser2Activity" android:parentActivityName=".Utiliser.UtiliserActivity"/>
+        <activity android:name=".Tracabilite.TracabiliteActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Stocker.StockerActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Parametrer.ParametrerActivity" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Utiliser.UtiliserActivity" android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
