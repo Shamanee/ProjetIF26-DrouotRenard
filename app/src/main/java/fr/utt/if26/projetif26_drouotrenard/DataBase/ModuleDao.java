@@ -33,4 +33,7 @@ public interface ModuleDao {
     @Query("SELECT * FROM module WHERE id = :id")
     Module getById(int id);
 
+    @Query("UPDATE module SET nom = :nom, ligne_id = :ligneId WHERE id = :id")
+    void updateById(int id, String nom, int ligneId);
+
 }

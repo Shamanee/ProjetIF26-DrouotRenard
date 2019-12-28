@@ -28,7 +28,15 @@ public class ModuleViewModel extends AndroidViewModel {
         repository.insert(module);
     }
 
-    public void deleteByNom(String nom) {
-        repository.deleteByNom(nom);
+//    public void deleteByNom(String nom) {
+//        repository.deleteByNom(nom);
+//    }
+
+    public void deleteById(int id) {
+        repository.deleteById(id);
+    }
+
+    public void updateById(int id, String nom, int ligneId) {
+        repository.updateById(id, nom, ligneId);
     }
 }

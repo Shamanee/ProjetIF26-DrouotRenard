@@ -28,11 +28,11 @@ public class ModuleRepository {
         });
     }
 
-    public void deleteByNom(String nom) {
-        new deleteAsyncTask(moduleDao).execute(nom);
+    public void deleteById(int id) {
+        new deleteAsyncTask(moduleDao).execute(id);
     }
 
-    private static class deleteAsyncTask extends AsyncTask<String, Void, Void> {
+    private static class deleteAsyncTask extends AsyncTask<Integer, Void, Void> {
 
         private ModuleDao asyncTaskDao;
 
@@ -41,8 +41,33 @@ public class ModuleRepository {
         }
 
         @Override
-        protected Void doInBackground(final String... params) {
-            asyncTaskDao.deleteByNom(params[0]);
+        protected Void doInBackground(Integer... integers) {
+            asyncTaskDao.deletebyId(integers[0]);
+            return null;
+        }
+    }
+
+    public void updateById(int id, String nom, int ligneId) {
+        new updateAsyncTask(moduleDao, id, nom, ligneId).execute();
+    }
+
+    private static class updateAsyncTask extends AsyncTask<Void, Void, Void> {
+
+        ModuleDao asyncTaskDao;
+        int id;
+        String nom;
+        int ligneId;
+
+        updateAsyncTask(ModuleDao dao, int id, String nom, int ligneId) {
+            this.asyncTaskDao = dao;
+            this.id = id;
+            this.nom = nom;
+            this.ligneId = ligneId;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            asyncTaskDao.updateById(id, nom, ligneId);
             return null;
         }
     }
